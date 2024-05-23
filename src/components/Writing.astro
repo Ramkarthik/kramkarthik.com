@@ -1,0 +1,44 @@
+---
+import PostList from "@/layouts/PostList.astro";
+---
+
+<h3>Writing</h3>
+<p>
+  Writing is thinking. I used to take writing seriously, that anything I publish
+  should be the perfect piece, should stand the test of time. That's never the
+  case. I almost stopped writing because of that pressue.
+</p>
+<blockquote>
+  <p>
+    So that’s what this blog is. I write here about thoughts I have, things I’m
+    working on, stuff I’ve read, experiences I’ve had, and so on. Whenever a
+    thought crystalizes in my head, I type it up and post it here. I don’t read
+    over it, I don’t show it to anyone, and I don’t edit it — I just post it.
+  </p>
+  <br />
+  <p>
+    I don’t consider this writing, I consider this thinking. I like sharing my
+    thoughts and I like hearing yours and I like practicing expressing ideas,
+    but fundamentally this blog is not for you, it’s for me. I hope that you
+    enjoy it anyway.
+  </p>
+  <b>- <a href="http://www.aaronsw.com/weblog/about">Aaron Swartz</a></b>
+</blockquote>
+<p>
+  So... this is my blog where I write thoughts and express my ideas. Following
+  <a href="https://maggieappleton.com/garden-history"
+    >Maggie Appleton's idea of digital garden</a
+  >, every piece of writing will follow the three stages:
+  <i><small>SEEDLING &rarr; BUDDING &rarr; EVERGREEN</small></i>
+</p>
+
+<p>
+  The notes specifically start as a seedling and they will be updated over time
+  as I read more and put more thought into it. This eases the pressure to write
+  only fully formed thoughts.
+</p>
+<p>With that, here are some of my writings:</p>
+<PostList props={{ key: "essays", base: "", showSummary: true, limit: 5 }} />
+<a href="/articles">Click here</a> to view the archive.
+<PostList props={{ key: "notes", base: "", showSummary: true, limit: 5 }} />
+<a href="/notes">Click here</a> to view the archive.

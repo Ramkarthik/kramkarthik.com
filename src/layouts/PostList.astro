@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import { capitalize } from "@/utils/string";
+
+export interface ListPostProps {
+  props: {
+    key: "essays" | "notes";
+    base: string;
+    showSummary: boolean;
+    limit: number;
+  };
+}
+
+const {
+  props: { key, base, showSummary, limit },
+} = Astro.props as ListPostProps;
+
+const posts = await getCollection(key);
+
+let sortedPosts = posts
+  .sort((a, b) => {
+    return +new Date(b.data.createdDate) - +new Date(a.data.createdDate);
+  })
+  .slice(0, limit);
+---
+
+<h3>{capitalize(key)}</h3>
+<ul>
+  {
+    sortedPosts.map((p) => {
+      return (
+        <li>
+          <a href={"/" + (base ? base + "/" : "") + p.slug}>{p.data.title}</a>
+          {showSummary && (
+            <p>
+              <small>{p.data.summary}</small>
+            </p>
+          )}
+        </li>
+      );
+    })
+  }
+</ul>

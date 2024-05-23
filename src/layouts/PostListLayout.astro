@@ -1,0 +1,19 @@
+---
+import Base from "@/layouts/Base.astro";
+import { AppConfig } from "@/utils/AppConfig";
+import PostList, { type ListPostProps } from "./PostList.astro";
+
+const {
+  props: { key, base, showSummary, limit },
+} = Astro.props as ListPostProps;
+---
+
+<Base
+  props={{
+    title: "My collection of " + key,
+    description: AppConfig.description,
+    image: AppConfig.image,
+  }}
+>
+  <PostList props={{ key, base, showSummary, limit }} />
+</Base>

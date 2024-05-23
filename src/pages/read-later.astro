@@ -1,0 +1,15 @@
+---
+import Base from "@/layouts/Base.astro";
+import { AppConfig } from "@/utils/AppConfig";
+---
+
+<Base
+  props={{
+    title: "Bookmarks | " + AppConfig.author,
+    description: AppConfig.description,
+    image: AppConfig.image,
+  }}
+>
+  <h3>Bookmarks</h3>
+  <p>Work in progress</p>
+</Base>

@@ -1,0 +1,15 @@
+---
+import SideProjects from "@/components/SideProjects.astro";
+import Base from "@/layouts/Base.astro";
+import { AppConfig } from "@/utils/AppConfig";
+---
+
+<Base
+  props={{
+    title: "Projects | " + AppConfig.author,
+    description: AppConfig.description,
+    image: AppConfig.image,
+  }}
+>
+  <SideProjects />
+</Base>

@@ -1,0 +1,18 @@
+---
+import { AppConfig } from "@/utils/AppConfig";
+---
+
+<h3>Projects</h3>
+<ul>
+  {
+    AppConfig.projects.map((p) => {
+      return (
+        <li>
+          <a href={p.link}>{p.name}</a>
+          <br />
+          <small>{p.summary}</small>
+        </li>
+      );
+    })
+  }
+</ul>
