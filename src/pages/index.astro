@@ -1,16 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import Base from "@/layouts/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
 import Intro from "@/components/Intro.astro";
-import PostList from "@/layouts/PostList.astro";
 import Writing from "@/components/Writing.astro";
 import SideProjects from "@/components/SideProjects.astro";
-
-const posts = await getCollection("essays");
-const sortedPosts = posts.sort((a, b) => {
-  return +new Date(b.data.createdDate) - +new Date(a.data.createdDate);
-});
 ---
 
 <Base
