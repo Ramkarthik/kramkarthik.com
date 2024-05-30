@@ -1,0 +1,79 @@
+---
+import { getCollection } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import { AppConfig } from "@/utils/AppConfig";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("programming");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+    },
+  }));
+}
+
+const { post } = Astro.props;
+const { title, summary, createdDate, modifiedDate, tags, garden } = post.data;
+const { Content } = await post.render();
+
+const posts = await getCollection("programming");
+
+const sortedPosts = posts.sort((a, b) => {
+  return +new Date(b.data.createdDate) - +new Date(a.data.createdDate);
+});
+
+const index = sortedPosts.findIndex((c: any) => {
+  return c.slug == post.slug;
+});
+
+const prev = index == 0 ? undefined : sortedPosts[index - 1];
+const next =
+  index == sortedPosts.length - 1 ? undefined : sortedPosts[index + 1];
+---
+
+<Base props={{ title: title, description: summary, image: AppConfig.image }}>
+  <h1>{title}</h1>
+  <div class="justify-between">
+    <div>
+      <small>
+        <i>{garden.toUpperCase()}</i>
+      </small>
+    </div>
+    <small>Planted: {createdDate}</small>
+  </div>
+  <div class="justify-between">
+    <div>
+      {
+        tags.map((t) => {
+          return (
+            <small>
+              <i>#{t.toUpperCase()}</i>
+            </small>
+          );
+        })
+      }
+    </div>
+    <small>Last tended: {modifiedDate}</small>
+  </div>
+  <hr />
+  <br />
+  <Content />
+  <hr />
+  <div class="justify-between">
+    {
+      prev && (
+        <a href={`/programming/${prev.slug}`}>
+          <small>&larr; {prev.data.title}</small>
+        </a>
+      )
+    }
+    {
+      next && (
+        <a href={`/programming/${next.slug}`}>
+          <small>{next.data.title} &rarr;</small>
+        </a>
+      )
+    }
+  </div>
+</Base>

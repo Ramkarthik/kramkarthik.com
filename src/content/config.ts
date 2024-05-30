@@ -15,4 +15,5 @@ const postCollection = defineCollection({
 export const collections = {
   'essays': postCollection,
   'notes': postCollection,
+  'programming': postCollection,
 };

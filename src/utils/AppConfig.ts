@@ -12,6 +12,9 @@ export const AppConfig = {
             name: "Notes",
             link: "/notes"
         },{
+            name: "Programming",
+            link: "/programming"
+        },{
             name: "Projects",
             link: "/projects"
         }],
