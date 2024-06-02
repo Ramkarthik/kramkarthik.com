@@ -16,6 +16,7 @@
     "astro": "^4.8.7",
     "astro-seo": "^0.8.3",
     "markdown-it": "^14.1.0",
+    "remark-code-titles": "^0.1.2",
     "sanitize-html": "^2.13.0",
     "typescript": "^5.4.5"
   }
