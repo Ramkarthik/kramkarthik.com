@@ -7,7 +7,7 @@ garden: "budding"
 summary: "This is the ultimate guide on how to create an Astro blog from scratch. By the end, you will have an Astro website and a blog ready to be deployed."
 ---
 
-Astro is a web framework to create content-driven websites. It is allows you to build extremely fast website. It is perfectly for building blogs and we are going to do exactly that. We are going build an Astro blog from scratch.
+Astro is a web framework for creating content-driven websites. It allows you to build extremely fast websites. It is perfect for building blogs and we are going to do exactly that. We are going to build an Astro blog from scratch.
 
 You can find the complete code here: [https://github.com/Ramkarthik/astro-blog-tutorial](https://github.com/Ramkarthik/astro-blog-tutorial)
 
@@ -19,7 +19,7 @@ We will be going over the steps below to build this blog:
 1. Add some basic styling
 2. Create a layout
 3. Set up default website configurations
-4. Create an about page
+4. Create an About page
 5. Create a Nav header
 6. Create a folder to add the blog content (the easy route)
 7. Use Content Collections for our blog
@@ -62,7 +62,7 @@ npm run dev
 
 Go to https://localhost:4321 and you will see the page displaying **Astro**. If you chose the blog template in step 2, you may see a different page.
 
-Before we get started, let's add modify the `tsconfig.json` file a little bit to make things easier for referencing different components.
+Before we get started, let's modify the `tsconfig.json` file a little bit to make things easier for referencing different components.
 
 ```json
 {
@@ -98,12 +98,12 @@ You should see the changes already. Without adding any classes, we can see that 
 
 ### 2. Create a layout
 
-Layouts are basic templates that can be shared across different pages. We want the basic `html`, `head`, and `footer` elements to be available in each page. So let's create a base layout that will store these as a template.
+Layouts are basic templates that can be shared across different pages. We want the basic `html`, `head`, and `footer` elements to be available on each page. So let's create a base layout that will store these as a template.
 
 1. Create a folder named `layouts` under the `src` folder (`\src\layouts`)
 2. Create a file inside the layouts folder named `Base.astro` (`\src\layouts\Base.astro`)
 
-The page we are seeing now comes from the `pages\index.astro` page. This is the default page or the entry point. We will be creating both the static pages (ex: `\about`) and the dynamic pages (ex: `\blog\my-first-post`) by create Astro pages inside the `pages` folder.
+The page we are seeing now comes from the `pages\index.astro` page. This is the default page or the entry point. We will be creating both the static pages (ex: `\about`) and the dynamic pages (ex: `\blog\my-first-post`) by creating Astro pages inside the `pages` folder.
 
 Now let's move all the code inside the `index.astro` page to the `Base.astro` page we created.
 
@@ -120,15 +120,15 @@ import Base from "@/layouts/Base.astro";
 You will notice a couple of things:
 
 1. In Astro, you write JavaScript code within the `three dash separators`.
-2. Similar to React, you can also write JavaScript alongside the HTML.
+2. Similar to React, you can also write JavaScript alongside HTML.
 
 If you refresh the page now, you should not see any difference because we only moved the content from `index.astro` to `Base.astro` and referenced `Base.astro` from `index.astro`.
 
-This bring us to a new concept in Astro... **Slots**. Astro uses `<slot/>` to inject the child components.
+This brings us to a new concept in Astro... **Slots**. Astro uses `<slot/>` to inject the child components.
 
 Let's go to `Base.astro`. Not every line of code there belongs in a template, mainly the `<h1>` tag. Replace that with `<slot />`.
 
-Go to `index.astro`, add the `h1` tag within the `<Base>` tag.
+Go to `index.astro`, and add the `h1` tag within the `<Base>` tag.
 
 ```jsx:pages\index.astro
 ---
@@ -139,11 +139,11 @@ import Base from "@/layouts/Base.astro";
 </Base>
 ```
 
-Go to the browser and you will not see any changes. What we did is move the template code from `index.astro` into `Base.astro` and use the layout.
+Go to the browser and you will not see any changes. What we did was move the template code from `index.astro` into `Base.astro` and use the layout.
 
 ### 3. Set up default website configurations
 
-We need some basic information about our website that we need to display in many places. We don't want to type them everywhere. We want to store these configurations in one place and refer to them wherever we need it so that if we want to make any change, we only have to change the configuration.
+We need some basic information about our website that we need to display in many places. We don't want to type them everywhere. We want to store these configurations in one place and refer to them wherever we need them so that if we want to make any changes, we only have to change the configuration.
 
 1. Create a folder named `utils` inside the `src` folder (`src\utils`)
 2. Create a file named `AppConfig.ts` inside the `utils` folder (`AppConfig.js` if you don't want TypeScript)
@@ -176,7 +176,7 @@ import { AppConfig } from "@/utils/AppConfig";
 
 Now that we have the home page, let's see how we can create a new page - in this case, an About (`https://localhost:4321/about`) page.
 
-Astro uses file based routing. Let's see some examples:
+Astro uses file-based routing. Let's see some examples:
 
 ```
 src/pages/index.astro -> mysite.com/
@@ -209,7 +209,7 @@ We will store all the components inside a separate folder called `components` wh
 1. Create a folder named `components` inside the `src` folder (`src\components`)
 2. Create a file named `Nav.astro`
 
-Let's display our name on the left and the navigation links on right.
+Let's display our name on the left and the navigation links on the right.
 
 ```jsx:src\components\Nav.astro
 ---
@@ -310,7 +310,7 @@ Perfect, we have the header set up now. In case you don't see the changes, press
 
 ### 6. Create a folder to add the blog content (the easy route)
 
-We want to create a folder to store the contents of our blog. Each post will be a Markdown file. We will do the easy implement first and then change that to match our needs.
+We want to create a folder to store the contents of our blog. Each post will be a Markdown file. We will do the easy implementation first and then change that to match our needs.
 
 1. Create a folder named `blog` inside the `pages` folder (`pages\blog`)
 2. Create a sample Markdown file inside the `blog` folder
@@ -330,15 +330,15 @@ This is my first blog post written in Markdown.
 
 ```
 
-The content within the `three dashed separator` `---` is called **frontmatter**. We will later use the information from the frontmatter to display in our page.
+The content within the `three dashed separator` `---` is called **frontmatter**. We will later use the information from the frontmatter to display on our page.
 
 Now go to the URL: `http://localhost:4321/blog/my-first-post` and you should see a very basic version of your blog post content. You will not see the title yet and that's where frontmatter comes into play.
 
 ### 7. Use Content Collections for our blog
 
-Currently, we have the blog content inside the `pages` folder. We want to keep the `pages` folder for code and move our blog content to a separate folder so that we have separation of concerns and it is also easier to manage it this way.
+Currently, we have the blog content inside the `pages` folder. We want to keep the `pages` folder for code and move our blog content to a separate folder so that we have a separation of concerns and it is also easier to manage it this way.
 
-Astro provides an API called `Content Collections` starting from `astro@2.0.0`. To use this feature, we have to create folder named `content` inside the `src` folder. This `content` folder is restricted for content collections and should not be used for anything else.
+Astro provides an API called `Content Collections` starting from `astro@2.0.0`. To use this feature, we have to create a folder named `content` inside the `src` folder. This `content` folder is restricted for content collections and should not be used for anything else.
 
 So let's go ahead and move our blog folder from `src\pages` to `src\content`. If you followed the steps so far, your project folder should look like this:
 
@@ -377,7 +377,7 @@ Now the URL `http://localhost:4321/blog/my-first-post` will not work because we 
 
 We want the URL `http://localhost:4321/blog/my-first-post` to work again. We can see that we have the `\blog` route which means we have to create a folder named `blog` inside the `pages` folder.
 
-Once we create the folder, we need set up a way to handle the dynamic part of the URL, called the `slug`. In our case, the slug is `my-first-post`. But for each post, this will change.
+Once we create the folder, we need to set up a way to handle the dynamic part of the URL, called the `slug`. In our case, the slug is `my-first-post`. But for each post, this will change.
 
 Let's create a file named `[slug].astro` inside the `blog` folder (`src\content\blog\[slug].astro`).
 
@@ -553,7 +553,7 @@ Great! But we now need a blog listing page where readers can find all the blog p
 
 ### 10. Create a blog listing page
 
-We want the listing page to be available at `/blog` which means, you guessed it, we have to add either a `blog.astro` find directly inside the `pages` folder or add a `index.astro` page inside the `pages\blog` folder. We will do the latter. We will also bring in the `Base.astro` layout (see how we are reusing the layout?).
+We want the listing page to be available at `/blog` which means, you guessed it, we have to add either a `blog.astro` find directly inside the `pages` folder or add an `index.astro` page inside the `pages\blog` folder. We will do the latter. We will also bring in the `Base.astro` layout (see how we are reusing the layout?).
 
 ```jsx:src\pages\blog\index.astro
 ---
@@ -632,7 +632,7 @@ const sortedPosts = posts.sort((a, b) => {
 
 Let's add some links for easy navigation.
 
-First, we will add a link for our blog listing page to the header. Since the links in the header comes from the `pages` property in `AppConfig.ts` file, we will add a link to the blog listing page to the `pages` array.
+First, we will add a link for our blog listing page to the header. Since the links in the header come from the `pages` property in `AppConfig.ts` file, we will add a link to the blog listing page to the `pages` array.
 
 ```typescript:src\utils\AppConfig.ts
 export const AppConfig = {
@@ -653,7 +653,7 @@ export const AppConfig = {
     }
 ```
 
-We will also add links to previous post and next post (if available) to the end of the blog post. To do this, we will retrieve the list of blog posts using the `getCollection()` function, sort the posts, find the index of the current post in the sorted list and then identify the previous and next post to display in the HTML. We do this by editing the `[slug].astro` file.
+We will also add the previous post and the next post (if available) to the end of the blog post. To do this, we will retrieve the list of blog posts using the `getCollection()` function, sort the posts, find the index of the current post in the sorted list, and then identify the previous and next posts to display in the HTML. We do this by editing the `[slug].astro` file.
 
 ```jsx:src/pages/blog/[slug].astro
 ---
@@ -726,13 +726,13 @@ const next =
 </Base>
 ```
 
-We should now have navigations links at the end of the blog post. You can verify that by going to `http://localhost:4321/blog/my-second-post`.
+We should now have navigation links at the end of the blog post. You can verify that by going to `http://localhost:4321/blog/my-second-post`.
 
 You may have noticed that the browser tab title always says Astro. We want this to be dynamic based on the page we are on. Introducing you to the world of **Astro Integrations**.
 
 ### 11. Using our first Astro Integration to add SEO
 
-Astro provides ability for us to use plugins either offered directly by Astro or created by the community to build things faster through Astro Integrations. We will use the `astro-seo` integration to:
+Astro provides the ability for us to use plugins either offered directly by Astro or created by the community to build things faster through Astro Integrations. We will use the `astro-seo` integration to:
 
 1. Fixing the title
 2. Add SEO to our page (we want the search engines to find our website)
@@ -835,7 +835,7 @@ const {
 </html>
 ```
 
-You will get a errors in every file that uses the `Base.astro` file because we are not providing the value for the props. Let's do that for each page.
+You will get errors in every file that uses the `Base.astro` file because we are not providing the value for the props. Let's do that for each page.
 
 First, let's update the `src\pages\index.astro` (homepage). For this, we will page the values from the `AppConfig.ts` file.
 
@@ -1007,7 +1007,7 @@ const next =
 </Base>
 ```
 
-Alright, we have fixed pretty much everything. The final thing related to SEO that we need to fix is the social image. We are using the value of `image` property from the `AppConfig.ts` file everywhere but we don't have that image. You can add the image you want to display as preview when sharing links. I usually take a screenshot of the homepage and use that. Once you choose the image, add it to `public\images\` with the name `social.png` since that's the value of `AppConfig.image`.
+Alright, we have fixed pretty much everything. The final thing related to SEO that we need to fix is the social image. We are using the value of `image` property from the `AppConfig.ts` file everywhere but we don't have that image. You can add the image you want to display as a preview when sharing links. I usually take a screenshot of the homepage and use that. Once you choose the image, add it to `public\images\` with the name `social.png` since that's the value of `AppConfig.image`.
 
 Alright, we are almost there setting up the blog. There are a couple more things we need for the blog to be complete.
 
@@ -1045,7 +1045,7 @@ export async function GET() {
 }
 ```
 
-We should also add a `<link>` to our `Base.astro` file that allows browsers and other apps to auto discover the RSS feed from our website.
+We should also add a `<link>` to our `Base.astro` file that allows browsers and other apps to auto-discover the RSS feed from our website.
 
 Let's add the below line to the `Base.astro` file just above the `</head>` tag.
 
@@ -1062,7 +1062,7 @@ We also have to create a sitemap and a robots.txt file so that search engines ca
 
 ### 13. Add Sitemap and robots.txt file
 
-We will use another Astro integration called `sitemap`. Instead of running `npm install`, we will run the below command which will both install the integration as well as auto configure the sitemap for us.
+We will use another Astro integration called `sitemap`. Instead of running `npm install`, we will run the below command which will both install the integration as well as auto-configure the sitemap for us.
 
 ```shell
 npx astro add sitemap
@@ -1110,7 +1110,7 @@ We have a few dummy values that we need to change before we deploy this blog.
 4. Update the social image with the image you would like `public\images\social.png`
 5. Update the `src\pages\about.astro` page with details about you
 
-Once you've made these changes, you can deploy to one of the many services that provide free hosting for static website.
+Once you've made these changes, you can deploy to one of the many services that provide free hosting for static websites.
 
 1. [Vercel](https://vercel.com/) - [Deploy your Astro Site to Vercel | Docs](https://docs.astro.build/en/guides/deploy/vercel/)
 2. [Cloudflare](https://www.cloudflare.com/) - [Astro · Cloudflare Pages docs](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/)
@@ -1118,7 +1118,7 @@ Once you've made these changes, you can deploy to one of the many services that 
 
 ### 15. Next steps
 
-You have a proper blog in place right now. There are few things you can add to this to make it better.
+You have a proper blog in place right now. There are a few things you can add to this to make it better.
 
 1. Create a `src\components\footer.astro` component and add it to the `Base.astro` layout to make it part of every page
 2. Add a `src\pages\now.astro` page to tell your readers about what you are doing now (following [The /now page movement | Derek Sivers](https://sive.rs/nowff))
