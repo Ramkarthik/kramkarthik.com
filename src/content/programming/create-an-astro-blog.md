@@ -9,9 +9,9 @@ summary: "This is the ultimate guide on how to create an Astro blog from scratch
 
 Astro is a web framework to create content-driven websites. It is allows you to build extremely fast website. It is perfectly for building blogs and we are going to do exactly that. We are going build an Astro blog from scratch.
 
-You can find the complete code here:
+You can find the complete code here: [https://github.com/Ramkarthik/astro-blog-tutorial](https://github.com/Ramkarthik/astro-blog-tutorial)
 
-This is the blog we are building from scratch:
+This is the blog we are building from scratch: [https://quick-astro-blog-tutorial.vercel.app/](https://quick-astro-blog-tutorial.vercel.app/)
 
 We will be going over the steps below to build this blog:
 
