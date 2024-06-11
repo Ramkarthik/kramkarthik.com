@@ -17,6 +17,9 @@ export const AppConfig = {
         },{
             name: "Projects",
             link: "/projects"
+        },{
+            name: "Lists",
+            link: "/lists"
         }],
         projects: [{
             name: "Markdown Notes",

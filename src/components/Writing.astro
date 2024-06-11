@@ -53,3 +53,7 @@ import PostList from "@/layouts/PostList.astro";
   props={{ key: "notes", base: "notes", showSummary: true, limit: 5 }}
 />
 <a href="/notes">View the notes archive</a>.
+<PostList
+  props={{ key: "lists", base: "lists", showSummary: true, limit: 5 }}
+/>
+<a href="/lists">View the lists archive</a>.

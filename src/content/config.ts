@@ -16,4 +16,5 @@ export const collections = {
   'essays': postCollection,
   'notes': postCollection,
   'programming': postCollection,
+  'lists': postCollection,
 };
