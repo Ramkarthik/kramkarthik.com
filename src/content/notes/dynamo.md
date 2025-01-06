@@ -13,7 +13,7 @@ Source: [Dynamo: Amazon’s Highly Available Key-value Store](https://www.allthi
 
 Context: Amazon uses a service oriented architecture consisting of a huge number of services. Handling failures is the default mode of operation for Amazon handling these many services. At any given time, there are many failing services. Dynamo is designed by keeping this in mind. It has to have high availability inspite of the many failing services. Dynamo sacrifices consistency under certain failure scenarios to achieve this level of high availability.
 
-## Design
+### Design
 
 - *Eventually consistent* - updates reach all replicas eventually.
 - *Always writeable* - Conflict resolution is handled during reads instead of writes so that writes are never rejected.
@@ -23,7 +23,7 @@ Context: Amazon uses a service oriented architecture consisting of a huge number
 - *Decentralized* - Centralized control can result in outages. Dynamo's design favors decentralization.
 - *Heterogeneity* - Work can be distributed to nodes based on it's capacity.
 
-## Core techniques (Challenge - Technique - Advantage)
+### Core techniques (Challenge - Technique - Advantage)
 
 - *Partitioning* - Consistency hashing - Incremental stability
 - *High availability for writes* - Vector clocks with read reconciliation - Vector size is decoupled from update rates
@@ -31,16 +31,18 @@ Context: Amazon uses a service oriented architecture consisting of a huge number
 - *Recovery from permanent failures* - Anti-entropy using Merkle trees - Synchronizes divergent replicas in the background
 - *Membership and failure detection* - Gossip-based membership protocol - Preserves symmetry and avoids central ownership
 
-## System interface
+### System interface
 
 - `get(key)`- Returns a single object or a list of objects with conflicting versions along with a context.
 - `put(key, context, object)` - Uses the key to identify where the replicas should be placed and writes the replicas to the disk.
 
 Dynamo uses MD5 hash on the key, which is used to determine the storage nodes responsible for serving the key.
 
-## Partitioning algorithm
+### Partitioning algorithm
 
-Dynamo uses a variant of consistent hashing. The basic consistent hasing has two main problems: 1. Non uniform distribution, and 2. Non heterogeneity (doesn't consider the capacity of individual nodes).
+Dynamo uses a variant of consistent hashing. The basic consistent hasing has two main problems:
+1. Non uniform distribution
+2. Non heterogeneity (doesn't consider the capacity of individual nodes)
 
 In this variant, instead of mapping a node to a single point in the circle, each node is mapped to multiple points.
 
