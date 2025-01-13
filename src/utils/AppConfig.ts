@@ -22,6 +22,15 @@ export const AppConfig = {
             link: "/lists"
         }],
         projects: [{
+            name: "glemail",
+            link: "https://github.com/Ramkarthik/glemail",
+            summary: "A lightweight client wrapper for various email providers, written for Gleam"
+        },
+        {
+            name: "ZValidation",
+            link: "https://github.com/Ramkarthik/zvalidation",
+            summary: "Simple, fast, and extensible validation library for .NET. "
+        },{
             name: "Markdown Notes",
             link: "https://markdownnote.com/",
             summary: "Markdown Notes is a free web app to instantly start taking notes."
