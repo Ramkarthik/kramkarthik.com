@@ -22,6 +22,11 @@ export const AppConfig = {
             link: "/lists"
         }],
         projects: [{
+            name: "t",
+            link: "https://github.com/Ramkarthik/t",
+            summary: "A very minimal, CLI based todo app that is written in Rust."
+        },
+        {
             name: "glemail",
             link: "https://github.com/Ramkarthik/glemail",
             summary: "A lightweight client wrapper for various email providers, written for Gleam"
