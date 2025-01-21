@@ -22,14 +22,13 @@ export const AppConfig = {
             link: "/lists"
         }],
         projects: [{
+            name: "pathern",
+            link: "https://github.com/ramkarthik/pathern",
+            summary: "A URL path pattern matching library for the Gleam programming language."
+        },{
             name: "t",
             link: "https://github.com/Ramkarthik/t",
             summary: "A very minimal, CLI based todo app that is written in Rust."
-        },
-        {
-            name: "glemail",
-            link: "https://github.com/Ramkarthik/glemail",
-            summary: "A lightweight client wrapper for various email providers, written for Gleam"
         },
         {
             name: "ZValidation",
@@ -40,12 +39,8 @@ export const AppConfig = {
             link: "https://markdownnote.com/",
             summary: "Markdown Notes is a free web app to instantly start taking notes."
         },{
-            name: "What's their time",
-            link: "https://whats-their-time.vercel.app/",
-            summary: "Keep track of the different timezones you are teammate are in. Never ask them what their time is again."
-        },{
             name: "HackerNews Deck",
             link: "https://hackernewsdeck.vercel.app/",
-            summary: "A cleaner and more efficient way to browse HackerNews. Works fine because Algolia did not kill the HN API like Elon who killed the Twitter API."
+            summary: "A cleaner and more efficient way to browse HackerNews."
         }]
     }
