@@ -1,4 +1,5 @@
 ---
+import Analytics from "@/components/Analytics.astro";
 import Head, { type HeadProps } from "@/components/Head.astro";
 import Nav from "@/components/Nav.astro";
 import { AppConfig } from "@/utils/AppConfig";
@@ -48,6 +49,7 @@ const {
       href={`${AppConfig.site}programming/feed.xml`}
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <Analytics />
   </head>
   <body>
     <div class="container">
@@ -62,10 +64,5 @@ const {
         </p>
       </footer>
     </div>
-
-    <script
-      data-goatcounter="https://ramkarthik.goatcounter.com/count"
-      async
-      src="//gc.zgo.at/count.js"></script>
   </body>
 </html>
