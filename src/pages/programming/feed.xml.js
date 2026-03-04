@@ -6,12 +6,14 @@ import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
 export async function GET() {
-  const blog = await getCollection("programming");
+  const allPosts = await getCollection("posts");
+  const programming = allPosts.filter(p => p.data.category === "programming");
+
   return rss({
     title: "Ramkarthik Krishnamurthy's Programming Notes",
     description: AppConfig.description,
     site: AppConfig.site,
-    items: blog.map((post) => ({
+    items: programming.map((post) => ({
       title: post.data.title,
       pubDate: post.data.createdDate,
       description: post.data.summary,
@@ -22,3 +24,4 @@ export async function GET() {
     })),
   });
 }
+

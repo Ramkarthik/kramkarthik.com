@@ -1,4 +1,5 @@
 ---
+category: notes
 title: "Good RSS Readers"
 createdDate: "2024-05-28"
 modifiedDate: "2024-05-28"

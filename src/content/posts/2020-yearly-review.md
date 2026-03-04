@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "2020 Yearly Review"
 createdDate: "2020-12-31"
 modifiedDate: "2021-01-11"

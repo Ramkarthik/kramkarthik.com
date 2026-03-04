@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "Retrieve old blog posts using Wayback Machine"
 createdDate: "2023-05-10"
 modifiedDate: "2023-05-10"

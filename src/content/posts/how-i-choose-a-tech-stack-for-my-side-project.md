@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "How I Choose a Tech Stack for my Side Project"
 createdDate: "2020-12-05"
 modifiedDate: "2020-12-12"

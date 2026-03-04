@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "Enough to Get the Job Done"
 createdDate: "2020-07-17"
 modifiedDate: "2020-12-12"

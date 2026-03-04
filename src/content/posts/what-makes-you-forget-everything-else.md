@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "What makes you forget everything else?"
 createdDate: "2021-12-07"
 modifiedDate: "2021-12-07"

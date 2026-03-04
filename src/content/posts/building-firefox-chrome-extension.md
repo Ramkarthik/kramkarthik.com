@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "Firefox vs Chrome Extensions: The Experience of Building and Publishing"
 createdDate: "2020-12-14"
 modifiedDate: "2020-12-18"

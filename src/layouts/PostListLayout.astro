@@ -4,7 +4,7 @@ import { AppConfig } from "@/utils/AppConfig";
 import PostList, { type ListPostProps } from "./PostList.astro";
 
 const {
-  props: { key, base, showSummary, limit },
+  props: { key, showSummary, limit },
 } = Astro.props as ListPostProps;
 ---
 
@@ -15,5 +15,5 @@ const {
     image: AppConfig.image,
   }}
 >
-  <PostList props={{ key, base, showSummary, limit }} />
+  <PostList props={{ key, showSummary, limit }} />
 </Base>

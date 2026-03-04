@@ -6,15 +6,13 @@ const postCollection = defineCollection({
     title: z.string(),
     summary: z.string(),
     tags: z.array(z.string()),
-    garden: z.enum(["seedling","budding","evergreen"]),
+    garden: z.enum(["seedling", "budding", "evergreen"]),
     createdDate: z.string(),
     modifiedDate: z.string(),
+    category: z.enum(["essays", "notes", "programming", "lists"]),
   }),
 });
 
 export const collections = {
-  'essays': postCollection,
-  'notes': postCollection,
-  'programming': postCollection,
-  'lists': postCollection,
+  'posts': postCollection,
 };

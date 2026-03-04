@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "Marketing that doesn't Feel Like Marketing"
 createdDate: "2020-06-19"
 modifiedDate: "2020-12-12"

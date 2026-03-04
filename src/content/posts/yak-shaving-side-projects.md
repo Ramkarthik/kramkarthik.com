@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "Yak Shaving during Side Projects"
 createdDate: "2022-07-08"
 modifiedDate: "2022-09-20"

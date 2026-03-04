@@ -4,24 +4,30 @@ import { capitalize } from "@/utils/string";
 
 export interface ListPostProps {
   props: {
-    key: "essays" | "notes";
-    base: string;
+    key: "essays" | "notes" | "programming" | "lists";
     showSummary: boolean;
     limit: number;
   };
 }
 
 const {
-  props: { key, base, showSummary, limit },
+  props: { key, showSummary, limit },
 } = Astro.props as ListPostProps;
 
-const posts = await getCollection(key);
+const allPosts = await getCollection("posts");
+const posts = allPosts.filter((p) => p.data.category === key);
 
 let sortedPosts = posts
   .sort((a, b) => {
     return +new Date(b.data.createdDate) - +new Date(a.data.createdDate);
   })
   .slice(0, limit);
+
+const getUrl = (p: any) => {
+  return p.data.category === "essays"
+    ? `/${p.slug}`
+    : `/${p.data.category}/${p.slug}`;
+};
 ---
 
 <h3>{capitalize(key)}</h3>
@@ -30,7 +36,8 @@ let sortedPosts = posts
     sortedPosts.map((p) => {
       return (
         <li>
-          <a href={"/" + (base ? base + "/" : "") + p.slug}>{p.data.title}</a>
+          <a href={getUrl(p)}>{p.data.title}</a>
+
           {showSummary && (
             <p>
               <small>{p.data.summary}</small>

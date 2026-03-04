@@ -2,26 +2,36 @@
 import { getCollection } from "astro:content";
 import Base from "@/layouts/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
+import Subscribe from "@/components/Subscribe.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("programming");
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: {
-      post,
-    },
-  }));
+  const posts = await getCollection("posts");
+  return posts.map((post) => {
+    const slug = post.slug;
+    const category = post.data.category;
+    const path = category === "essays" ? slug : `${category}/${slug}`;
+
+    return {
+      params: { post: path },
+      props: {
+        post,
+      },
+    };
+  });
 }
 
 const { post } = Astro.props;
-const { title, summary, createdDate, modifiedDate, tags, garden } = post.data;
+const { title, summary, createdDate, modifiedDate, tags, garden, category } =
+  post.data;
 const { Content } = await post.render();
 
-const posts = await getCollection("programming");
+const posts = await getCollection("posts");
 
-const sortedPosts = posts.sort((a, b) => {
-  return +new Date(b.data.createdDate) - +new Date(a.data.createdDate);
-});
+const sortedPosts = posts
+  .filter((p) => p.data.category === category)
+  .sort((a, b) => {
+    return +new Date(b.data.createdDate) - +new Date(a.data.createdDate);
+  });
 
 const index = sortedPosts.findIndex((c: any) => {
   return c.slug == post.slug;
@@ -30,6 +40,12 @@ const index = sortedPosts.findIndex((c: any) => {
 const prev = index == 0 ? undefined : sortedPosts[index - 1];
 const next =
   index == sortedPosts.length - 1 ? undefined : sortedPosts[index + 1];
+
+const getUrl = (p: any) => {
+  return p.data.category === "essays"
+    ? `/${p.slug}`
+    : `/${p.data.category}/${p.slug}`;
+};
 ---
 
 <Base props={{ title: title, description: summary, image: AppConfig.image }}>
@@ -59,18 +75,18 @@ const next =
   <hr />
   <br />
   <Content />
-  <hr />
+
   <div class="justify-between">
     {
       prev && (
-        <a href={`/programming/${prev.slug}`}>
+        <a href={getUrl(prev)}>
           <small>&larr; {prev.data.title}</small>
         </a>
       )
     }
     {
       next && (
-        <a href={`/programming/${next.slug}`}>
+        <a href={getUrl(next)}>
           <small>{next.data.title} &rarr;</small>
         </a>
       )

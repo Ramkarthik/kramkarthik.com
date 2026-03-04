@@ -1,4 +1,5 @@
 ---
+category: programming
 title: "Notes on SaaS Multitenancy"
 createdDate: "2024-05-30"
 modifiedDate: "2024-05-30"

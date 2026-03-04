@@ -1,4 +1,5 @@
 ---
+category: notes
 title: "Jack of all trades, master of a few"
 createdDate: "2024-05-23"
 modifiedDate: "2024-05-23"

@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "Binge reading blogs"
 createdDate: "2025-12-21"
 modifiedDate: "2025-12-21"

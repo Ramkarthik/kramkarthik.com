@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "Starting a Creative Endeavour"
 createdDate: "2025-03-31"
 modifiedDate: "2025-03-31"

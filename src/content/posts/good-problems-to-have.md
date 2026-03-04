@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "Good Problems to Have"
 createdDate: "2016-02-08"
 modifiedDate: "2016-09-20"

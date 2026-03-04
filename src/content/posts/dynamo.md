@@ -1,4 +1,5 @@
 ---
+category: notes
 title: "Amazon DynamoDB"
 createdDate: "2025-01-06"
 modifiedDate: "2025-01-06"

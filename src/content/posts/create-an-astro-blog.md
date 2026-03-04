@@ -1,4 +1,5 @@
 ---
+category: programming
 title: "Create an Astro blog from scratch"
 createdDate: "2024-06-03"
 modifiedDate: "2024-06-03"

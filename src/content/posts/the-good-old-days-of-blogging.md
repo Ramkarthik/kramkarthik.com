@@ -1,4 +1,5 @@
 ---
+category: essays
 title: "The Good Old Days of Blogging"
 createdDate: "2020-05-07"
 modifiedDate: "2020-12-12"

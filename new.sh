@@ -9,7 +9,7 @@ if [ "$#" -lt 2 ]; then
 fi
 
 # Configuration
-TARGET_DIR="./src/content/$1"
+TARGET_DIR="./src/content/posts"
 DATE=$(date +"%Y-%m-%d")
 SLUG=$(echo "$2" \
   | tr '[:upper:]' '[:lower:]' \
@@ -27,6 +27,7 @@ fi
 cat <<EOF > "$FILEPATH"
 ---
 title: "$2"
+category: "$1"
 createdDate: "$DATE"
 modifiedDate: "$DATE"
 tags: [""]
@@ -34,5 +35,6 @@ garden: "seedling"
 summary: ""
 ---
 EOF
+
 
 echo "New post created: $FILEPATH"

@@ -38,22 +38,18 @@ import PostList from "@/layouts/PostList.astro";
   only fully formed thoughts.
 </p>
 <p>With that, here are some of my writings:</p>
-<PostList props={{ key: "essays", base: "", showSummary: true, limit: 5 }} />
+<PostList props={{ key: "essays", showSummary: true, limit: 5 }} />
 <a href="/articles">View the essays archive</a>.
 <PostList
   props={{
     key: "programming",
-    base: "programming",
     showSummary: true,
     limit: 5,
   }}
 />
 <a href="/programming">View the programming archive</a>.
-<PostList
-  props={{ key: "notes", base: "notes", showSummary: true, limit: 5 }}
-/>
+<PostList props={{ key: "notes", showSummary: true, limit: 5 }} />
 <a href="/notes">View the notes archive</a>.
-<PostList
-  props={{ key: "lists", base: "lists", showSummary: true, limit: 5 }}
-/>
+<PostList props={{ key: "lists", showSummary: true, limit: 5 }} />
+
 <a href="/lists">View the lists archive</a>.
