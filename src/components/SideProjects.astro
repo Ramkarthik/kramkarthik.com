@@ -2,17 +2,64 @@
 import { AppConfig } from "@/utils/AppConfig";
 ---
 
-<h3>Projects</h3>
-<ul>
-  {
-    AppConfig.projects.map((p) => {
-      return (
-        <li>
-          <a href={p.link}>{p.name}</a>
-          <br />
-          <small>{p.summary}</small>
-        </li>
-      );
-    })
+<p>Some of the things I've built in my free time...</p>
+
+<div class="post-list">
+  <ul>
+    {
+      AppConfig.projects.map((p) => {
+        return (
+          <li class="post-item">
+            <a href={p.link} class="project-link">
+              {p.name}
+            </a>
+            <p class="post-summary">{p.summary}</p>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  ul {
+    padding-left: 0;
+    list-style: none;
   }
-</ul>
+  .post-item {
+    margin-bottom: 35px;
+  }
+  .project-link {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-darker-text);
+    line-height: 1.2;
+    transition: all 0.2s ease;
+    border: none !important;
+    display: inline-flex;
+    align-items: center;
+  }
+  .project-link:after {
+    content: "↗";
+    margin-left: 8px;
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translate(-5px, 5px);
+    transition: all 0.3s ease;
+    color: var(--color-accent);
+  }
+  .project-link:hover {
+    color: var(--color-accent);
+  }
+  .project-link:hover:after {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .post-summary {
+    font-size: 1rem;
+    color: var(--color-medium-gray);
+    margin-top: 10px;
+    font-style: italic;
+    line-height: 1.5;
+  }
+</style>

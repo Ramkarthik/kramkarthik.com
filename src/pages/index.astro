@@ -13,8 +13,25 @@ import SideProjects from "@/components/SideProjects.astro";
     image: AppConfig.image,
   }}
 >
-  <h3>Hey there!</h3>
-  <Intro />
-  <SideProjects />
-  <Writing />
+  <header class="animate-up">
+    <h1>Hey there!</h1>
+  </header>
+
+  <hr class="divider-large animate-up delay-1" />
+
+  <section class="animate-up delay-2">
+    <Intro />
+  </section>
+
+  <hr class="divider-small animate-up delay-3" />
+
+  <section class="animate-up delay-3">
+    <SideProjects />
+  </section>
+
+  <hr class="divider-small animate-up delay-4" />
+
+  <section class="animate-up delay-4">
+    <Writing />
+  </section>
 </Base>

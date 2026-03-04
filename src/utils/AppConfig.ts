@@ -1,19 +1,13 @@
 export const AppConfig = {
     author: "Ramkarthik Krishnamurthy",
-    title: "I'm Ramkarthik Krishnamurthy and this is my personal website",
-    description: "Ramkarthik is a software engineer and he writes notes, essays, and code.",
+    title: "Hey there!",
+    description: "",
     image: "/images/social.png",
     twitter: "@Ramkarthik",
     site: "https://kramkarthik.com/",
     pages: [{
-        name: "Essays",
-        link: "/articles"
-    }, {
-        name: "Notes",
-        link: "/notes"
-    }, {
-        name: "Programming",
-        link: "/programming"
+        name: "Blog",
+        link: "/blog"
     }, {
         name: "Projects",
         link: "/projects"
@@ -21,6 +15,7 @@ export const AppConfig = {
         name: "Lists",
         link: "/lists"
     }],
+
     projects: [{
         name: "Blogosphere",
         link: "https://blogosphere.app/",

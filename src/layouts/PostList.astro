@@ -4,7 +4,7 @@ import { capitalize } from "@/utils/string";
 
 export interface ListPostProps {
   props: {
-    key: "essays" | "notes" | "programming" | "lists";
+    key: "essays" | "notes" | "programming" | "lists" | "all";
     showSummary: boolean;
     limit: number;
   };
@@ -15,9 +15,13 @@ const {
 } = Astro.props as ListPostProps;
 
 const allPosts = await getCollection("posts");
-const posts = allPosts.filter((p) => p.data.category === key);
+const posts =
+  key === "all"
+    ? allPosts.filter((p) => p.data.category !== "lists")
+    : allPosts.filter((p) => p.data.category === key);
 
 let sortedPosts = posts
+
   .sort((a, b) => {
     return +new Date(b.data.createdDate) - +new Date(a.data.createdDate);
   })
@@ -30,21 +34,73 @@ const getUrl = (p: any) => {
 };
 ---
 
-<h3>{capitalize(key)}</h3>
-<ul>
-  {
-    sortedPosts.map((p) => {
-      return (
-        <li>
-          <a href={getUrl(p)}>{p.data.title}</a>
+<div class="post-list">
+  <ul>
+    {
+      sortedPosts.map((p) => {
+        return (
+          <li class="post-item">
+            <a href={getUrl(p)} class="post-link">
+              {p.data.title}
+            </a>
 
-          {showSummary && (
-            <p>
-              <small>{p.data.summary}</small>
-            </p>
-          )}
-        </li>
-      );
-    })
+            {showSummary && <p class="post-summary">{p.data.summary}</p>}
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  .list-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-light-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+    font-weight: 600;
   }
-</ul>
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+  .post-item {
+    margin-bottom: 35px;
+  }
+  .post-link {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-darker-text);
+    line-height: 1.2;
+    transition: all 0.2s ease;
+    border: none !important;
+    display: inline-flex;
+    align-items: center;
+  }
+  .post-link:after {
+    content: "→";
+    margin-left: 8px;
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--color-accent);
+  }
+  .post-link:hover {
+    color: var(--color-accent);
+  }
+  .post-link:hover:after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .post-summary {
+    font-size: 1rem;
+    color: var(--color-medium-gray);
+    margin-top: 10px;
+    font-style: italic;
+    line-height: 1.5;
+  }
+</style>

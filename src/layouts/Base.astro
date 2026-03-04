@@ -14,6 +14,12 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/css/prism.css" type="text/css" />
     <Head props={{ title, description, image }} />
@@ -44,8 +50,19 @@ const {
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
-    <Nav />
-    <slot />
+    <div class="container">
+      <Nav />
+      <main>
+        <slot />
+      </main>
+      <footer>
+        <p>
+          © {new Date().getFullYear()}
+          {AppConfig.author}. Built with Astro.
+        </p>
+      </footer>
+    </div>
+
     <script
       data-goatcounter="https://ramkarthik.goatcounter.com/count"
       async

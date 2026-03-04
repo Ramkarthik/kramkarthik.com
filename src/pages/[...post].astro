@@ -49,47 +49,117 @@ const getUrl = (p: any) => {
 ---
 
 <Base props={{ title: title, description: summary, image: AppConfig.image }}>
-  <h1>{title}</h1>
-  <div class="justify-between">
-    <div>
-      <small>
-        <i>{garden.toUpperCase()}</i>
-      </small>
-    </div>
-    <small>Planted: {createdDate}</small>
-  </div>
-  <div class="justify-between">
-    <div>
-      {
-        tags.map((t) => {
-          return (
-            <small>
-              <i>#{t.toUpperCase()}</i>
-            </small>
-          );
-        })
-      }
-    </div>
-    <small>Last tended: {modifiedDate}</small>
-  </div>
-  <hr />
-  <br />
-  <Content />
+  <article class="animate-up">
+    <header class="post-header">
+      <h1>{title}</h1>
+      <div class="post-meta">
+        <span class="meta-item garden-status"
+          ><i>{garden.toUpperCase()}</i></span
+        >
+        <span class="meta-sep">•</span>
+        <span class="meta-item publish-date">Planted: {createdDate}</span>
+        <span class="meta-sep">•</span>
+        <span class="meta-item modified-date">Updated: {modifiedDate}</span>
+      </div>
+      <div class="post-tags">
+        {tags.map((t) => <span class="tag">#{t.toUpperCase()}</span>)}
+      </div>
+    </header>
 
-  <div class="justify-between">
+    <div class="post-content">
+      <Content />
+    </div>
+  </article>
+
+  <style>
+    .post-header {
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    .post-meta {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 0.9rem;
+      color: var(--color-light-gray);
+      margin-bottom: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .meta-sep {
+      color: var(--color-light-border);
+    }
+    .post-tags {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .tag {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 0.85rem;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+    .post-content {
+      margin-top: 40px;
+    }
+  </style>
+
+  <hr class="divider-small" />
+
+  <div class="pagination animate-up delay-1">
     {
       prev && (
-        <a href={getUrl(prev)}>
-          <small>&larr; {prev.data.title}</small>
+        <a href={getUrl(prev)} class="pagination-link prev">
+          <small class="dir-label">&larr; Previous</small>
+          <span class="post-title">{prev.data.title}</span>
         </a>
       )
     }
+    <div class="spacer"></div>
     {
       next && (
-        <a href={getUrl(next)}>
-          <small>{next.data.title} &rarr;</small>
+        <a href={getUrl(next)} class="pagination-link next">
+          <small class="dir-label">Next &rarr;</small>
+          <span class="post-title">{next.data.title}</span>
         </a>
       )
     }
   </div>
+
+  <style>
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 60px;
+      padding-top: 40px;
+    }
+    .spacer {
+      flex: 1;
+    }
+    .pagination-link {
+      display: flex;
+      flex-direction: column;
+      max-width: 45%;
+      border: none !important;
+    }
+    .pagination-link.next {
+      text-align: right;
+    }
+    .dir-label {
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--color-light-gray);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .post-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--color-accent);
+    }
+  </style>
 </Base>

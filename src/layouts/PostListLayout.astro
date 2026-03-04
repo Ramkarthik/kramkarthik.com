@@ -1,6 +1,7 @@
 ---
 import Base from "@/layouts/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
+import { capitalize } from "@/utils/string";
 import PostList, { type ListPostProps } from "./PostList.astro";
 
 const {
@@ -10,10 +11,17 @@ const {
 
 <Base
   props={{
-    title: "My collection of " + key,
+    title: key === "all" ? "Blog" : `My collection of ${key}`,
     description: AppConfig.description,
     image: AppConfig.image,
   }}
 >
-  <PostList props={{ key, showSummary, limit }} />
+  <header class="animate-up">
+    <h1>{key === "all" ? "Blog" : capitalize(key)}</h1>
+  </header>
+
+  <hr class="divider-large animate-up delay-1" />
+  <section class="animate-up delay-1">
+    <PostList props={{ key, showSummary, limit }} />
+  </section>
 </Base>
