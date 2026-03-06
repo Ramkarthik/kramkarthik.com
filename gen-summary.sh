@@ -55,11 +55,11 @@ payload = {
     'messages': [
         {
             'role': 'system',
-            'content': 'You generate concise blog post summaries. Return ONLY the summary text — no quotes, no labels, no extra text. The summary must be under 160 characters.'
+            'content': 'You generate concise blog post summaries. Return ONLY the summary text — no quotes, no labels, no extra text. The summary must be under 160 characters. It should capture the essence of the post and entice readers to click through.'
         },
         {
             'role': 'user',
-            'content': 'Write a short summary (not more than 2 lines) for this blog post:\n\n' + body
+            'content': body
         }
     ]
 }

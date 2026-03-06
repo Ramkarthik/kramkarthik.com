@@ -5,7 +5,7 @@ import { capitalize } from "@/utils/string";
 import PostList, { type ListPostProps } from "./PostList.astro";
 
 const {
-  props: { key, showSummary, limit },
+  props: { key, showSummary, limit, showDate = false },
 } = Astro.props as ListPostProps;
 ---
 
@@ -22,6 +22,6 @@ const {
 
   <hr class="divider-large animate-up delay-1" />
   <section class="animate-up delay-1">
-    <PostList props={{ key, showSummary, limit }} />
+    <PostList props={{ key, showSummary, limit, showDate }} />
   </section>
 </Base>

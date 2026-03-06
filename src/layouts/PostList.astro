@@ -7,11 +7,12 @@ export interface ListPostProps {
     key: "essays" | "notes" | "programming" | "lists" | "all";
     showSummary: boolean;
     limit: number;
+    showDate?: boolean;
   };
 }
 
 const {
-  props: { key, showSummary, limit },
+  props: { key, showSummary, limit, showDate = false },
 } = Astro.props as ListPostProps;
 
 const allPosts = await getCollection("posts");
@@ -41,7 +42,8 @@ const getUrl = (p: any) => {
         return (
           <li class="post-item">
             <a href={getUrl(p)} class="post-link">
-              {p.data.title}
+              <span class="post-title">{p.data.title}</span>
+              {showDate && <span class="post-date">{p.data.createdDate}</span>}
             </a>
 
             {showSummary && <p class="post-summary">{p.data.summary}</p>}
@@ -70,16 +72,31 @@ const getUrl = (p: any) => {
     margin-bottom: 35px;
   }
   .post-link {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 15px;
+    border: none !important;
+    text-decoration: none;
+  }
+  .post-date {
+    font-size: 0.95rem;
+    color: var(--color-light-gray);
+    font-family: "IBM Plex Sans", sans-serif;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  .post-title {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--color-darker-text);
     line-height: 1.2;
     transition: all 0.2s ease;
-    border: none !important;
     display: inline-flex;
     align-items: center;
   }
-  .post-link:after {
+  .post-title:after {
     content: "→";
     margin-left: 8px;
     font-size: 1.1rem;
@@ -88,10 +105,10 @@ const getUrl = (p: any) => {
     transition: all 0.3s ease;
     color: var(--color-accent);
   }
-  .post-link:hover {
+  .post-link:hover .post-title {
     color: var(--color-accent);
   }
-  .post-link:hover:after {
+  .post-link:hover .post-title:after {
     opacity: 1;
     transform: translateX(0);
   }

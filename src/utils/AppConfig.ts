@@ -25,10 +25,6 @@ export const AppConfig = {
         link: "https://github.com/ramkarthik/glace",
         summary: "An easy to use, high performance framework to quickly build APIs for the Gleam programming language."
     }, {
-        name: "pathern",
-        link: "https://github.com/ramkarthik/pathern",
-        summary: "A URL path pattern matching library for the Gleam programming language."
-    }, {
         name: "HackerNews Deck",
         link: "https://hackernewsdeck.vercel.app/",
         summary: "A cleaner and more efficient way to browse HackerNews."
