@@ -73,6 +73,20 @@ const getUrl = (p: any) => {
     <div class="post-content">
       <Content />
     </div>
+
+    <div class="post-actions highlight-box">
+      <p>
+        Want to discuss this post? You can <a
+          href={`https://letterbird.co/ramkarthik?subject=${encodeURIComponent(title)}`}
+          target="_blank"
+          rel="noopener noreferrer">reply by email</a
+        > or reach out on <a
+          href="https://x.com/Ramkarthik"
+          target="_blank"
+          rel="noopener noreferrer">X</a
+        >.
+      </p>
+    </div>
   </article>
 
   <style>
@@ -106,6 +120,12 @@ const getUrl = (p: any) => {
     }
     .post-content {
       margin-top: 40px;
+    }
+    .post-actions {
+      margin-top: 50px;
+    }
+    .post-actions p {
+      margin-bottom: 0;
     }
   </style>
 

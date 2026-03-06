@@ -1,8 +1,8 @@
 ---
 title: "The Start-Stop Problem"
 category: essays
-createdDate: "2026-03-06"
-modifiedDate: "2026-03-06"
+createdDate: "2026-03-06T21:48:04.723Z"
+modifiedDate: "2026-03-06T21:48:04.723Z"
 tags: ["100DaysToOffload"]
 garden: "seedling"
 summary: "In the typical world, in which a wide range of dopamine pumping entertainment is available on your fingertip and the temptation is to scroll for instant gratification, if you're going to get yourself to do something meaningful, then you have to offer an experience that's as good as an Instagram reel or better. What does that mean? It means you need to offer yourself two things simultaneously: there needs to be a way to start doing what you strive to as quickly as possble without any friction, and the act of starting should have immediately results that can be experienced."
