@@ -57,9 +57,13 @@ const getUrl = (p: any) => {
           ><i>{garden.toUpperCase()}</i></span
         >
         <span class="meta-sep">•</span>
-        <span class="meta-item publish-date">Planted: {createdDate}</span>
+        <span class="meta-item publish-date"
+          >Planted: {createdDate.split("T")[0]}</span
+        >
         <span class="meta-sep">•</span>
-        <span class="meta-item modified-date">Updated: {modifiedDate}</span>
+        <span class="meta-item modified-date"
+          >Updated: {modifiedDate.split("T")[0]}</span
+        >
         <span class="meta-sep">•</span>
         <span class="meta-item word-count"
           >{post.body?.split(/\s+/).length || 0} words</span

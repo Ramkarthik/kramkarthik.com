@@ -43,7 +43,11 @@ const getUrl = (p: any) => {
           <li class="post-item">
             <a href={getUrl(p)} class="post-link">
               <span class="post-title">{p.data.title}</span>
-              {showDate && <span class="post-date">{p.data.createdDate}</span>}
+              {showDate && (
+                <span class="post-date">
+                  {p.data.createdDate.split("T")[0]}
+                </span>
+              )}
             </a>
 
             {showSummary && <p class="post-summary">{p.data.summary}</p>}
