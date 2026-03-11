@@ -1,0 +1,46 @@
+---
+title: "Setting up free emails for sideprojects"
+category: "essays"
+createdDate: "2026-03-11T18:22:54.000Z"
+modifiedDate: "2026-03-11T18:22:54.000Z"
+tags: ["100DaysToOffload"]
+garden: "seedling"
+summary: "Learn to set up free email routing with Cloudflare for your side projects, saving costs on multiple domains while maintaining professional communication."
+---
+
+When you work on a sideproject, the first thing you probably you do is register a domain. One of the final steps you do is setting up the email for contact as well as transactional and marketing emails. Ideally, if you have registered sideproject.com, you would want the emails you send to your users to go from support@sideproject.com or your_name@sideproject.com.
+
+Setting up an email with Google Workspace would cost you over $5 per month per email address. If you're like me who works on multiple side projects, registering an email address for each is unnecessary cost. I like to keep the costs low so that, even if the project doesn't get traction, I can still keep it running.
+
+## Enter Cloudflare
+
+Cloudflare has many solutions and one of them is free email routing. You can read more about it [here](https://www.cloudflare.com/en-in/developer-platform/products/email-routing/).
+
+To give you a tl;dr version, Cloudflare lets you create email address which basically forwards the email to a different email you already own, at no cost.
+
+If you manage your DNS on Cloudflare, it's extremely easy to set this up.
+
+1. Log into Cloudflare
+2. Select your domain
+3. From the left sidebar, click on Email -> Email Routing
+<img src="https://assets.kramkarthik.com/images/20260311-email-routing.png" alt="Cloudflare email routing screen" width="90%" />
+4. Click on Add Domain
+5. In the next screen, select your domain and click next
+<img src="https://assets.kramkarthik.com/images/20260311-choose-domain.png" alt="Cloudflare email routing screen" width="90%" />
+6. If your domain is on Cloudflare, it will automatically add the DNS records when you hit "Add records and continue".
+<img src="https://assets.kramkarthik.com/images/20260311-dns-records.png" alt="Cloudflare email routing screen" width="90%" />
+7. Go back to the Email Routing screen and click on "Destination Addresses".
+8. Click on "Add Address" and add the email to which you want the emails to be forwarded to. You will be required to verify this email.
+<img src="https://assets.kramkarthik.com/images/20260311-destination-address.png" alt="Cloudflare email routing screen" width="90%" />
+9. Now go back to the Email Routing screen and select the domain you want to set up the custom email for.
+10. Click on "Routing Rules"
+<img src="https://assets.kramkarthik.com/images/20260311-routing-rules.png" alt="Cloudflare email routing screen" width="90%" />
+11. Click on "Create Address"
+12. Enter the email, choose the domain, and then select the destination address. Hit save.
+<img src="https://assets.kramkarthik.com/images/20260311-setup-routing.png" alt="Cloudflare email routing screen" width="90%" />
+
+That's it. You now have an email that you can use as your contact/support email as well as the from email for your transactional and marketing emails.
+
+You can set up multiple emails like this for a single domain. You can set up emails like this for multiple domains. All for free.
+
+P.S.: This post is not sponsored by Cloudflare. I like things that are free.
