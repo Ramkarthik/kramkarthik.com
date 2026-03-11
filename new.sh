@@ -10,7 +10,9 @@ fi
 
 # Configuration
 TARGET_DIR="./src/content/posts"
-DATE=$(date +"%Y-%m-%d")
+DATE=$(date -u +%s)
+DATE=$((DATE + 120*60))
+DATE=$(date -u -r "$DATE" +"%Y-%m-%dT%H:%M:%S.000Z")
 SLUG=$(echo "$2" \
   | tr '[:upper:]' '[:lower:]' \
   | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')
@@ -30,7 +32,7 @@ title: "$2"
 category: "$1"
 createdDate: "$DATE"
 modifiedDate: "$DATE"
-tags: [""]
+tags: ["100DaysToOffload"]
 garden: "seedling"
 summary: ""
 ---
