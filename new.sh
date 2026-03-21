@@ -16,8 +16,10 @@ DATE=$(date -u -r "$DATE" +"%Y-%m-%dT%H:%M:%S.000Z")
 SLUG=$(echo "$2" \
   | tr '[:upper:]' '[:lower:]' \
   | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')
-FILENAME="$SLUG.md"
+FILENAME="$SLUG.mdx"
 FILEPATH="$TARGET_DIR/$FILENAME"
+STARTDATE="2026-03-06"
+DATENUMBER=$(python3 -c "from datetime import date; print((date.today() - date.fromisoformat('$STARTDATE')).days)")
 
 # Prevent overwriting an existing file
 if [ -f "$FILEPATH" ]; then
@@ -36,6 +38,11 @@ tags: ["100DaysToOffload"]
 garden: "seedling"
 summary: ""
 ---
+import HundredDaysToOffload from '../../components/HundredDaysToOffload.astro';
+
+// Fill in the postNumber and dayNumber
+
+<HundredDaysToOffload postNumber={} dayNumber={$DATENUMBER} />
 EOF
 
 
