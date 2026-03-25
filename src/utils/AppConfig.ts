@@ -2,7 +2,7 @@ export const AppConfig = {
     author: "Ramkarthik Krishnamurthy",
     title: "Ramkarthik Krishnamurthy - This is my personal website",
     description: "Ramkarthik is a software engineer and he writes notes, essays, and code.",
-    image: "/images/social.png",
+    image: "/images/social-1.png",
     twitter: "@Ramkarthik",
     site: "https://kramkarthik.com/",
     pages: [{
