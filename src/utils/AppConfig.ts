@@ -17,6 +17,10 @@ export const AppConfig = {
     }],
 
     projects: [{
+        name: "Recap",
+        link: "https://recapfm.com/",
+        summary: "An app that allows you to save articles and later receive it on your favorite podcast player as a two-person conversation (AI). It’s a great way to catch up on your reading while you’re on the go or doing any chores."
+    },{
         name: "Blogosphere",
         link: "https://blogosphere.app/",
         summary: "Social media platforms deprioritize external links which makes it harder to find interesting blog posts. Blogosphere aggregates posts from over 1,000 blogs written by real humans."
