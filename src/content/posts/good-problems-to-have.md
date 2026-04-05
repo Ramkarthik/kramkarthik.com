@@ -25,7 +25,7 @@ Having won zilch the previous season, United went on to win the treble[2] in the
 3. Solskjaer — Played 37(as sub — 20) — Scored 18 goals
 4. Sheringham — Played 27(as sub — 16) — Scored 5 goals
 
-While you could say that Solskjaer and Sheringham played significantly lesser games, they combined to create one of, if not, the most magical moment in the history of Manchester United.
+While you could say that Solskjaer and Sheringham played significantly fewer games, they combined to create one of, if not, the most magical moment in the history of Manchester United.
 
 It was a beautiful night in Barcelona and Camp Nou stadium was buzzing for the Champions League[3]final game between Manchester United and Bayern Munich. United were left stunned as Bayern Munich got an early goal through Mario Basler in the 6th minute.
 

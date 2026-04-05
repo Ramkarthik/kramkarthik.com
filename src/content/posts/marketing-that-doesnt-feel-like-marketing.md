@@ -50,8 +50,8 @@ So when they constantly talk about monopolies and privacy concerns, they build a
 
 When they build products, it is usually an extension of what they have always spoken about.
 
-Lot of people (especially the startup community) feel they intentionally hate on things so they can market whatever they are selling. [Paul Graham](https://twitter.com/paulg/) calls it “beef-as marketing”. Paul Graham calls it “beef-as-marketing”: [https://twitter.com/paulg/status/1273233413261209600](https://twitter.com/paulg/status/1273233413261209600)
+Lot of people (especially the startup community) feel they intentionally hate on things so they can market whatever they are selling. [Paul Graham](https://twitter.com/paulg/) calls it “beef-as-marketing”: [https://twitter.com/paulg/status/1273233413261209600](https://twitter.com/paulg/status/1273233413261209600)
 
-I feel they are really passionate about what they believe in. If you intend to do something just to market your product, you cannot do it consistenly.
+I feel they are really passionate about what they believe in. If you intend to do something just to market your product, you cannot do it consistently.
 
 Whether we can agree on that or not, it is clear that this strategy works for them. At the end of the day, it is marketing. But it is marketing that doesn’t feel like marketing. And it takes lot of work.

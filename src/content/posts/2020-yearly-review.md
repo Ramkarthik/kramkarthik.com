@@ -58,7 +58,7 @@ While the six months from March to August were really tough, it did end well.
 
 ## Working from home for a fully remote team
 
-Replika Software is a completely remote team. Most of our team is spread out in the US. Since almost everyone is working from these days, it still hasn't hit me that I'm working for a fully remote team. And because the team is great, it has been easy for me to work from Chennai, having almost a 12 hour difference with the rest of the team.
+Replika Software is a completely remote team. Most of our team is spread out in the US. Since almost everyone is working from home these days, it still hasn't hit me that I'm working for a fully remote team. And because the team is great, it has been easy for me to work from Chennai, having almost a 12 hour difference with the rest of the team.
 
 ## Highlights of 2020
 

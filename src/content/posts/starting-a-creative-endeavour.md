@@ -50,7 +50,7 @@ Once you decide to create, there are a couple of things that can happen:
 
 The first thing to remember is (as a reminder for myself): You are doing this for yourself. In the book [Keep Going by Austin Kleon](https://austinkleon.com/keepgoing/), he talks about daily practice:
 
-> The truly prolific artists have figured out a daily practice,,, a repeatable way of working that insulates them from success, failure, and the chaos of the outside world. They have all identified what they want to spend their time on, and they work at it every day, no matter what, Whether their latest thing is universally rejected, ignored, or acclaimed, they know they'll still get up tomorrow and do their work.
+> The truly prolific artists have figured out a daily practice, a repeatable way of working that insulates them from success, failure, and the chaos of the outside world. They have all identified what they want to spend their time on, and they work at it every day, no matter what, Whether their latest thing is universally rejected, ignored, or acclaimed, they know they'll still get up tomorrow and do their work.
 
 I'm no artist, let alone a prolific one. But this thought process shields you from the outcome.
 

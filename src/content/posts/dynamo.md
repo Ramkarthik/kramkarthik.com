@@ -22,7 +22,7 @@ Context: Amazon uses a service oriented architecture consisting of a huge number
 - *Incremental stability* - Can scale one node at a time with minimal impact to both the operators of the system and the system itself.
 - *Symmetry* - Every node has the same responsibility (no ownership model).
 - *Decentralized* - Centralized control can result in outages. Dynamo's design favors decentralization.
-- *Heterogeneity* - Work can be distributed to nodes based on it's capacity.
+- *Heterogeneity* - Work can be distributed to nodes based on its capacity.
 
 ### Core techniques (Challenge - Technique - Advantage)
 

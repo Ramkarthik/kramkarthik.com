@@ -34,7 +34,7 @@ And speaking of blogging groups, you know what I’m talking about. You were mos
 
 These bloggers were on your blog roll. You know blog roll. The sidebar which had links to your favorite blogs.
 
-It’s hard to find blogs like those today. Even if there are blogs like that, you cannot find the community that came along with it. Bach tne, you could go to a popular blog and read comments and you could recognize most names. You clicked on their name and went to their blog. If they had FeedBurner RSS subscription stats and had similar numbers as your blog, you could become their friend and grow together (upvoting, subscribing and commenting on each other’s blog).
+It’s hard to find blogs like those today. Even if there are blogs like that, you cannot find the community that came along with it. Back then, you could go to a popular blog and read comments and you could recognize most names. You clicked on their name and went to their blog. If they had FeedBurner RSS subscription stats and had similar numbers as your blog, you could become their friend and grow together (upvoting, subscribing and commenting on each other’s blog).
 
 All of that is missing. And I have no idea if it will ever be back. But reading that blog post (linked at the top) brought back memories and along with it the urge to start writing again without worrying about it being on brand or being serious.
 

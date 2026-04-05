@@ -62,7 +62,7 @@ Since the same code was working fine for both the browsers, this is a tie.
 
 ## **2. Debugging the extension**
 
-Both Firefox and Chrome has a way to load extensions and test.
+Both Firefox and Chrome have a way to load extensions and test.
 
 To debug an extension in Firefox:
 
